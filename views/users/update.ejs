@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs')%>
+        <title>Create New User</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="col-md-4 mx-auto  border border-primary rounded m-5">
+            <h4 class="text-center text-primary mt-5">Update User</h4>
+            <form class="col-10 mx-auto m-4" method="post" action="/manageUsers/edit">
+                <div class="row mb-4">
+                    <label class="form-label">First Name:</label>
+                    <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter First Name" value="<%-user.first_name%>"/>
+                    <input type="hidden" name="id" id="id" value="<%-user.id%>"/>
+                </div>
+                <div class="row mb-4">
+                    <label class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Enter Last Name" value="<%-user.last_name%>"/>
+                </div>
+                <div class="row mb-4">
+                    <label class="form-label">Email: </label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email" value="<%-user.email%>" />
+                </div>
+                <div class="row mb-4">
+                    <label class="form-label">Mobile:</label>
+                    <input type="tel" class="form-control" name="mobile" id="mobile" placeholder="Enter Mobile" value="<%-user.mobile%>" />
+                </div>
+                <div class="row mt-4">
+                    <div class="text-center">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+        <%- include('../partials/scripts.ejs')%>
+</body>
+
+</html>
